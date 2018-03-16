@@ -10,12 +10,14 @@ spark-master:
     - 7077:7077
     - 8080:8080
     - 8088:8088
+    - 6066:6066
   expose:
     - 4040
     - 8042
     - 7077
     - 8080
     - 8088
+    - 6066
   links:
     - kafka
 
@@ -50,7 +52,7 @@ kafka:
     - zookeeper
   environment:
     KAFKA_BROKER_ID: 0
-    KAFKA_HOST_NAME: 172.17.0.3 
+    KAFKA_HOST_NAME: 0.0.0.0 
     KAFKA_ADVERTISED_PORT: 9092
     KAFKA_ZOOKEEPER_CONNECT: 172.17.0.2:2181
     
